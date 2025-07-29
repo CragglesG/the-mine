@@ -1,0 +1,13 @@
+<h1>Paths</h1>
+
+<%= link_to "New Path", new_path_path if authenticated? %>
+
+<% cache @path do %>
+  <div id="paths">
+    <% @paths.each do |path| %>
+      <div>
+        <%= link_to path.name, path %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
